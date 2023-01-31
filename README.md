@@ -20,15 +20,15 @@ The function retrieves various information from the printer such as:
 1. Download the function file.
 
 2. Import the function into your PowerShell session by running:
-```
+```powershell
 Import-Module .\Get-PrinterMIB.ps1
 ```
 Call the function with a valid IP address of a printer:
-```
+```powershell
 Get-PrinterMIB -Printer <IPAddress>
 ```
 ## Example 
-```
+```powershell
 PS C:\> Get-PrinterMIB -Printer 10.0.0.1
 
 HostName     : printer1
