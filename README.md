@@ -28,6 +28,7 @@ Call the function with a valid IP address of a printer:
 Get-PrinterMIB -Printer <IPAddress>
 
 ## Example 
+```
 PS C:\> Get-PrinterMIB -Printer 10.0.0.1
 
 HostName     : printer1
@@ -40,6 +41,6 @@ TonerDetails :
 Description CurrentLevels
 ---------- --------------
 Toner Cartridge   100%
-
+```
 ## Note
 The function assumes that the printer is accessible via SNMP with the community name "public". The SNMP version used is 2 and the timeout value is 3000 milliseconds.
