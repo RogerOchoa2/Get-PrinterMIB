@@ -35,7 +35,7 @@ HostName     : printer1
 PageCount    : 169112
 Trays        : {TRAY 1, TRAY 2}
 Model        : HP LaserJet P4015
-SerialNumber : CNDY961967
+SerialNumber : ######
 TonerDetails : {...}
 
 Description                                 CurrentLevels
