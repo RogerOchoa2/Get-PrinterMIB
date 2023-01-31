@@ -28,7 +28,7 @@ Call the function with a valid IP address of a printer:
 Get-PrinterMIB -Printer <IPAddress>
 ```
 ## Example 
-```powershell
+```
 PS C:\> Get-PrinterMIB -Printer 10.0.0.1
 
 HostName     : printer1
