@@ -1,13 +1,46 @@
 Get-PrinterMIB
-Function
-The Get-PrinterMIB function retrieves and returns the following information about a printer using Simple Network Management Protocol (SNMP):
+A PowerShell function to retrieve SNMP data from a printer.
 
-Host Name, Page Count, Tray Information, Model,Serial Number,Toner Details (Description, Current Levels), Parameters, $Printer: IP address or hostname of the printer,Output
-The function returns a custom object that contains the information listed above.
+##Functionality
+The function retrieves various information from the printer such as:
 
-Example Usage:
-Get-PrinterMIB -Printer 192.168.0.100
+- HostName
+- PageCount
+- Trays
+- Model
+- SerialNumber
+- TonerDetails (including Description and CurrentLevels)
 
-Note:The function requires SNMP support on the printer.
-The community name is hardcoded as "public".
-The function uses version 2 of SNMP and a timeout value of 3000ms.
+
+##Requirements
+- OLEprn.dll
+
+
+##Usage
+1. Download the function file.
+
+2. Import the function into your PowerShell session by running:
+
+<!-- Import-Module .\Get-PrinterMIB.ps1 -->
+
+Call the function with a valid IP address of a printer:
+
+<!-- Get-PrinterMIB -Printer <IPAddress> -->
+
+## Example
+<!-- 
+PS C:\> Get-PrinterMIB -Printer 10.0.0.1
+
+HostName     : printer1
+PageCount    : 1234
+Trays        : Tray 1,Tray 2,Tray 3
+Model        : HP LaserJet Pro M15w
+SerialNumber : XYZ1234567
+TonerDetails : 
+
+Description CurrentLevels
+---------- --------------
+Toner Cartridge   100% -->
+
+##Note
+The function assumes that the printer is accessible via SNMP with the community name "public". The SNMP version used is 2 and the timeout value is 3000 milliseconds.
