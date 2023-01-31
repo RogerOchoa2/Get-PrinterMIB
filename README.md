@@ -32,15 +32,17 @@ Get-PrinterMIB -Printer <IPAddress>
 PS C:\> Get-PrinterMIB -Printer 10.0.0.1
 
 HostName     : printer1
-PageCount    : 1234
-Trays        : Tray 1,Tray 2,Tray 3
-Model        : HP LaserJet Pro M15w
-SerialNumber : XYZ1234567
-TonerDetails : 
+PageCount    : 169112
+Trays        : {TRAY 1, TRAY 2}
+Model        : HP LaserJet P4015
+SerialNumber : CNDY961967
+TonerDetails : {...}
 
-Description CurrentLevels
----------- --------------
-Toner Cartridge   100%
+Description                                 CurrentLevels
+-----------                                 -------------
+Black Cartridge HP CC364X                   90.00%       
+Maintenance Kit HP 110V-CB388A, 220V-CB389A 69.20%       
+
 ```
 ## Note
 The function assumes that the printer is accessible via SNMP with the community name "public". The SNMP version used is 2 and the timeout value is 3000 milliseconds.
