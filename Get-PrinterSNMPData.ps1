@@ -1,5 +1,5 @@
 ﻿# Define a function to get SNMP data from a printer
-Function Get-PrinterMIB {
+Function Get-PrinterSNMPData {
   Param($Printer)
 
   #Function to clean up raw MIB values
