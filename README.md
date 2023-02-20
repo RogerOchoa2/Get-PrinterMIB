@@ -24,12 +24,12 @@ To run the script, open a PowerShell console and enter the following command:
 Replace <IP_Address_or_Hostname> with the IP address or hostname of the printer you want to retrieve data from.
 The script will retrieve the following information from the printer:
 
--Host name
--Page count
--Trays
--Model
--Serial number
--Toner details (description and current level percentage)
+- Host name
+- Page count
+- Trays
+- Model
+- Serial number
+- Toner details (description and current level percentage)
 
 The script will return the information in a custom object.
 
