@@ -22,7 +22,6 @@ To run the script, open a PowerShell console and enter the following command:
 .\Get-PrinterSNMPData.ps1 -Printer <IP_Address_or_Hostname>
 ```
 Replace <IP_Address_or_Hostname> with the IP address or hostname of the printer you want to retrieve data from.
-
 The script will retrieve the following information from the printer:
 
 -Host name
@@ -35,7 +34,7 @@ The script will retrieve the following information from the printer:
 The script will return the information in a custom object.
 
 
-##Contributing
+## Contributing
 Contributions are welcome. Feel free to submit a pull request or open an issue if you find a bug or have a suggestion.
 
 ## Example 
