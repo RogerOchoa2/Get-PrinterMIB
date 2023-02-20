@@ -1,4 +1,6 @@
-<#
+function Get-PrinterSNMPData {
+ 
+ <#
 .SYNOPSIS
 Gets SNMP data from a printer.
 
@@ -14,8 +16,9 @@ Get-PrinterSNMPData -Printer 10.0.0.2
 .EXAMPLE
 Get-PrinterSNMPData -Printer printer1.example.com
 #>
-
- function Get-PrinterSNMPData {
+ 
+ 
+ 
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory=$true, ValueFromPipeline=$true)]
