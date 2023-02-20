@@ -1,4 +1,4 @@
-#PowerShell Script: Get-PrinterSNMPData
+# PowerShell Script: Get-PrinterSNMPData
 
 ## Description
 This PowerShell script gets toner descriptions, toner maximum levels, toner current levels, page count, tray information, model, serial number, and host name from a printer using SNMP.
