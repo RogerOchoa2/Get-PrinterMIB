@@ -10,10 +10,10 @@ This PowerShell script gets toner descriptions, toner maximum levels, toner curr
 
 
 ## Installation
-1.Clone or download the repository to your local machine.
-2.Open a PowerShell console.
-3.Navigate to the directory where the script is saved.
-4.Run the script by entering .\Get-PrinterSNMPData.ps1 -Printer <IP_Address_or_Hostname>
+1. Clone or download the repository to your local machine.
+2. Open a PowerShell console.
+3. Navigate to the directory where the script is saved.
+4. Run the script by entering .\Get-PrinterSNMPData.ps1 -Printer <IP_Address_or_Hostname>
 
 
 ## Usage
