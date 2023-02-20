@@ -4,9 +4,9 @@
 This PowerShell script gets toner descriptions, toner maximum levels, toner current levels, page count, tray information, model, serial number, and host name from a printer using SNMP.
 
 ## Prerequisites
--Windows operating system
--PowerShell version 5.0 or later
--Access to the printer via SNMP
+- Windows operating system
+- PowerShell version 5.0 or later
+- Access to the printer via SNMP
 
 
 ## Installation
