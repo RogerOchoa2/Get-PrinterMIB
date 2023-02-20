@@ -1,18 +1,48 @@
-﻿# Define a function to get SNMP data from a printer
+<#
+.SYNOPSIS
+Gets SNMP data from a printer.
+
+.DESCRIPTION
+This script gets toner descriptions, toner maximum levels, toner current levels, page count, tray information, model, serial number, and host name from a printer using SNMP.
+
+.PARAMETER Printer
+The IP address or host name of the printer.
+
+.EXAMPLE
+Get-PrinterSNMPData -Printer 10.0.0.2
+
+.EXAMPLE
+Get-PrinterSNMPData -Printer printer1.example.com
+#>
+
 Function Get-PrinterSNMPData {
   Param($Printer)
 
-  #Function to clean up raw MIB values
-  Function MIBCleanup ($object) {
-    #Split raw data into separate lines
-    $raw = $object
-    $split = $raw -split [Environment]::NewLine
-    #Remove unwanted lines
-    $MibValReg = $split -notmatch "(?<=printmib)"
+ function Get-PrinterSNMPData {
+    [CmdletBinding()]
+    Param(
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true)]
+        [string]$Printer
+    )
 
-    #Return filtered data
-    return $MibValReg
-  } 
+    # Validate the $Printer parameter
+    if ([string]::IsNullOrEmpty($Printer)) {
+        throw "The Printer parameter is required."
+    }
+
+    try {
+        # Define a function to clean up raw MIB values
+        function MIBCleanup {
+            param($object)
+            # Split raw data into separate lines
+            $raw = $object
+            $split = $raw -split [Environment]::NewLine
+            # Remove unwanted lines
+            $MibValReg = $split -notmatch "(?<=printmib)"
+
+            # Return filtered data
+            return $MibValReg
+        } 
         
     # Create an instance of the SNMP object
     $SNMP = New-Object -ComObject olePrn.OleSNMP
