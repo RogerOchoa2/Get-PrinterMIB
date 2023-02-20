@@ -27,19 +27,23 @@ Get-PrinterSNMPData -Printer printer1.example.com
         throw "The Printer parameter is required."
     }
 
-    try {
-        # Define a function to clean up raw MIB values
-        function MIBCleanup {
-            param($object)
-            # Split raw data into separate lines
-            $raw = $object
-            $split = $raw -split [Environment]::NewLine
-            # Remove unwanted lines
-            $MibValReg = $split -notmatch "(?<=printmib)"
 
-            # Return filtered data
-            return $MibValReg
-        } 
+Function MIBCleanup ($object) {
+    #Split raw data into separate lines
+    $raw = $object
+    $split = $raw -split [Environment]::NewLine
+    #Remove unwanted lines
+    $MibValReg = $split -notmatch "(?<=printmib)"
+
+    #Return filtered data
+    try {
+        return $MibValReg
+    }
+    catch {
+        Write-Error "Error getting MIB data: $_"
+        return $null
+    }
+}
         
     # Create an instance of the SNMP object
     $SNMP = New-Object -ComObject olePrn.OleSNMP
