@@ -15,9 +15,6 @@ Get-PrinterSNMPData -Printer 10.0.0.2
 Get-PrinterSNMPData -Printer printer1.example.com
 #>
 
-Function Get-PrinterSNMPData {
-  Param($Printer)
-
  function Get-PrinterSNMPData {
     [CmdletBinding()]
     Param(
